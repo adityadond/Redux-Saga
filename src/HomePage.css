@@ -1,0 +1,77 @@
+/* HomePage.css */
+
+.main_homepage {
+  display: flex;
+  flex-direction: column;
+}
+
+.homepage_bottom {
+  display: flex;
+  flex-direction: row;
+  margin: 10px;
+}
+.left {
+  width: 150px;
+}
+.right {
+  width: 150px;
+}
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.card {
+  width: 250px;
+
+  margin: 10px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.ulcard {
+  list-style-type: none;
+  padding: 0;
+  text-align: center;
+}
+
+.ulcard li {
+  margin-bottom: 10px;
+}
+
+.item-image {
+  width: 100%;
+  height: 200px;
+  border-radius: 8px;
+  margin-top: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  object-fit: cover;
+}
+
+.item-image:hover {
+  transform: scale(1.05);
+}
+
+.show-more,
+.show-less {
+  color: #007bff;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.show-more:hover,
+.show-less:hover {
+  color: #0056b3;
+}

@@ -1,0 +1,12 @@
+.leftcheckbox {
+  display: flex;
+}
+
+.check {
+  margin-right: 10px;
+}
+
+.laeblll {
+  text-transform: capitalize;
+  white-space: nowrap;
+}

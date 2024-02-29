@@ -1,0 +1,16 @@
+.product-details {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 20px;
+  width: 100v;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  /* Center vertically */
+  height: 100vh;
+  margin: 20px;
+}
+
+.product-details img {
+  width: 10%;
+  height: auto;
+  margin-bottom: 10px;
+}

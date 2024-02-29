@@ -1,0 +1,8 @@
+export const FETCH_DATA = "FETCH_DATA";
+export const FETCH_DATA_SUCCESS = "FETCH_DATA_SUCCESS";
+export const FETCH_DATA_ERROR = "FETCH_DATA_ERROR";
+export const ADD_TO_CART = "ADD_TO_CART";
+export const REMOVE_CART = "REMOVE_CART";
+export const SET_SELECTED_ITEM = "SET_SELECTED_ITEM";
+export const CLEAR_SELECTED_ITEM = "CLEAR_SELECTED_ITEM";
+export const CLEAR_CART = "CLEAR_CART";
