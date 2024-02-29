@@ -61,7 +61,11 @@ function Checkout() {
           <button className="place-order-button" onClick={handlePlaceOrder}>
             Place Order
           </button>
-          <Modal show={orderPlaced} onClose={handleCloseModal}>
+          <Modal
+            data-testid="modal"
+            show={orderPlaced}
+            onClose={handleCloseModal}
+          >
             <p>Order placed successfully!</p>
           </Modal>
         </>

@@ -84,11 +84,11 @@ describe("reducers", () => {
       };
       const action = {
         type: ADD_TO_CART,
-        item: { id: 1, name: "Item 1", price: 10 },
+        item: { id: 1, name: "Item 1", price: 10, quantity: 1 },
       };
       const newState = cartReducer(initialState, action);
       expect(newState).toEqual({
-        cartItems: [{ id: 1, name: "Item 1", price: 10 }],
+        cartItems: [{ id: 1, name: "Item 1", price: 10, quantity: 1 }],
       });
     });
 

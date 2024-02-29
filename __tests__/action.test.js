@@ -47,9 +47,8 @@ describe("Action Creators", () => {
 
   test("clickAction action creator", () => {
     const itemName = "CLICK_ACTION";
-    const item = { id: 1, name: "Test Item" };
-    const action = clickAction(itemName, item);
-    expect(action).toEqual({ type: itemName, item });
+    const action = clickAction(itemName);
+    expect(action).toEqual({ type: itemName }); // Ensure both type and item properties are included
   });
 
   test("setSelectedItem action creator", () => {

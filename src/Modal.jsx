@@ -9,7 +9,11 @@ function Modal({ show, onClose, children }) {
   }
 
   return (
-    <div className="modal-overlay" onClick={onClose}>
+    <div
+      className="modal-overlay"
+      data-testid="modal-overlay"
+      onClick={onClose}
+    >
       <div className="modal-content" onClick={(e) => e.stopPropagation()}>
         {children}
         <button className="close-button" onClick={onClose}>
