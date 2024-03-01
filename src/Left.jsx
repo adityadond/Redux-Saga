@@ -1,10 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-import { clickAction, setSelectedItem } from "./action";
+import { clickAction } from "./action";
 import "./Left.css";
 
 function Left() {
   const dispatch = useDispatch();
+
+  const [selectedCheckbox, setSelectedCheckbox] = useState(false);
 
   const items = [
     { id: 1, name: "All" },
@@ -15,8 +17,8 @@ function Left() {
   ];
 
   const handleCheckboxChange = (itemName) => {
+    setSelectedCheckbox(itemName); // Update selected checkbox state
     dispatch(clickAction(itemName));
-    dispatch(setSelectedItem(itemName)); // Set selected item in Redux
   };
 
   return (
@@ -28,6 +30,7 @@ function Left() {
               type="checkbox"
               id={item.id}
               value={item.name}
+              checked={selectedCheckbox === item.name} // Check if the current item matches the selected checkbox
               onChange={() => handleCheckboxChange(item.name)}
             />
           </div>
