@@ -3,41 +3,58 @@ import "./Header.css";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { FaShoppingCart } from "react-icons/fa"; // Import the cart icon from react-icons/fa
+import { useAuth0 } from "@auth0/auth0-react";
 
 function Header() {
   const cartItemsCount = useSelector(
     (state) => state.cartReducer.cartItems.length
   );
+  const { loginWithRedirect, logout, isAuthenticated } = useAuth0();
+  console.log(isAuthenticated);
 
   return (
     <div className="header">
       <div>
         <Link to="/">
-          <h1>Home</h1>
+          <h3>Home</h3>
         </Link>
       </div>
       <div>
         <Link to="/counter">
-          <h1>Counter</h1>
+          <h3>Counter</h3>
         </Link>
       </div>
       <div>
         <Link to="/cart" className="cart-link">
-          <h1>Cart</h1>
+          <h3>Cart</h3>
           <FaShoppingCart className="cart-icon" />
           <span className="cart-count">{cartItemsCount}</span>
         </Link>
       </div>
       <div>
         <Link to="/signup">
-          <h1>SignUp</h1>
+          <h3>SignUp</h3>
+        </Link>
+      </div>
+      <div className="accountList">
+        <Link to="/accountList">
+          <span>Hello, Aditya</span>
+          <h3>Accounts & List</h3>
         </Link>
       </div>
       <div>
         <Link to="/checkout">
-          <h1>Checkout</h1>
+          <h3>Checkout</h3>
         </Link>
       </div>
+
+      {isAuthenticated ? (
+        <button onClick={() => logout({ returnTo: window.location.origin })}>
+          Log Out
+        </button>
+      ) : (
+        <button onClick={() => loginWithRedirect()}>Log In</button>
+      )}
     </div>
   );
 }

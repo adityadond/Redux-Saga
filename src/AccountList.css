@@ -1,0 +1,28 @@
+li {
+  list-style-type: none;
+}
+.your_account {
+  position: absolute;
+  top: 80px;
+  left: 50%; /* Center horizontally */
+  transform: translateX(-50%); /* Center horizontally */
+}
+
+.lists {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 60px;
+  margin-left: 300px;
+  margin-right: 300px;
+}
+
+.list_border {
+  width: 200px; /* Set fixed width for each box */
+  height: 200px; /* Set fixed height for each box */
+  border: 2px solid grey;
+  border-radius: 10px;
+  padding: 10px;
+  margin: 10px;
+  background-color: white;
+}

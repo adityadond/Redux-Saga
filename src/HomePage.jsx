@@ -9,14 +9,16 @@ import "react-toastify/dist/ReactToastify.css";
 import SmallHeader from "./SmallHeader";
 import Left from "./Left";
 import Right from "./Right";
+import { useAuth0 } from "@auth0/auth0-react";
 
 const HomePage = () => {
+  const { isAuthenticated, isLoading, loginWithRedirect } = useAuth0();
   const dispatch = useDispatch();
   const state = useSelector((state) => state.reducer.data);
   const small = useSelector((state) => state.clickReducer.click);
   const loading = useSelector((state) => state.reducer.loading);
 
-  const memoizedSmall = useMemo(() => small, [small]); // Memoize small selector result
+  const memoizedSmall = useMemo(() => small, [small]);
 
   useEffect(() => {
     dispatch(fetchData());
@@ -41,6 +43,19 @@ const HomePage = () => {
     dispatch({ type: "All", item: updatedSmall });
   };
 
+  if (isLoading) {
+    return <div>Loading...</div>;
+  }
+
+  if (!isAuthenticated) {
+    return (
+      <div className="main_homepage">
+        <h1>Please sign in to view the homepage</h1>
+
+        <Button onClick={() => loginWithRedirect()}>Log In</Button>
+      </div>
+    );
+  }
   return (
     <div className="main_homepage">
       <SmallHeader />
