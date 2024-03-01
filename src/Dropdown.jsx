@@ -15,7 +15,11 @@ const Dropdown = ({ item }) => {
   const items = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
   return (
     <div>
-      <select value={value} onChange={handleChange}>
+      <select
+        value={value}
+        onChange={handleChange}
+        style={{ margin: "10px", padding: "2px" }}
+      >
         {items.map((i) => (
           <option value={i} key={i}>
             {i}

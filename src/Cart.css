@@ -59,3 +59,7 @@
 li {
   list-style-type: none;
 }
+
+.qty_button {
+  margin: 10px;
+}

@@ -41,7 +41,7 @@ function Cart() {
                       <p>{item.category}</p>
                       <p>{item.description}</p>
                       <p>${item.price}</p>
-                      <span>
+                      <span className="qty_button">
                         Qty:<Dropdown item={item}></Dropdown>
                       </span>
                       <button
