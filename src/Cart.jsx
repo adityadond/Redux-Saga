@@ -2,6 +2,7 @@ import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { removeCart } from "./action";
 import { useNavigate } from "react-router-dom";
+import Dropdown from "./Dropdown";
 import "./Cart.css"; // Import CSS file for styling
 
 function Cart() {
@@ -29,19 +30,20 @@ function Cart() {
               {cartItems.map((item) => (
                 <li key={item.id}>
                   <div className="item-details">
-                    <div>
-                      <img
-                        src={item.image}
-                        alt={item.title}
-                        className="item-image"
-                      />
-                    </div>
+                    <img
+                      src={item.image}
+                      alt={item.title}
+                      className="item-image"
+                    />
+
                     <div className="item-info">
                       <h3>{item.title}</h3>
                       <p>{item.category}</p>
                       <p>{item.description}</p>
                       <p>${item.price}</p>
-                      <p>Qty: {item.quantity}</p>
+                      <span>
+                        Qty:<Dropdown item={item}></Dropdown>
+                      </span>
                       <button
                         onClick={() => handleRemoveFromCart(item.id)}
                         data-testid={`remove-button-${item.id}`}

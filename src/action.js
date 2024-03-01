@@ -5,6 +5,7 @@ import {
   FETCH_DATA,
   REMOVE_CART,
   CLEAR_CART,
+  CHANGE_QTY,
 } from "./constants";
 import { SET_SELECTED_ITEM, CLEAR_SELECTED_ITEM } from "./constants";
 
@@ -54,4 +55,10 @@ export const clickAction = (itemName) => ({
 
 export const clearCart = () => ({
   type: CLEAR_CART,
+});
+
+export const changeQty = (id, qty) => ({
+  type: CHANGE_QTY,
+  id: id,
+  qty: qty,
 });

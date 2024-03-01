@@ -3,6 +3,7 @@ import {
   ADD_TO_CART,
   REMOVE_CART,
   CLEAR_CART,
+  CHANGE_QTY,
 } from "./constants";
 
 import { combineReducers } from "redux";
@@ -89,6 +90,25 @@ export const cartReducer = (state = cartState, action) => {
       return {
         ...state,
         cartItems: [],
+      };
+    case CHANGE_QTY:
+      console.log("CHANGE_QTY action dispatched");
+      console.log("Action ID:", action.id);
+      console.log("Action Quantity:", action.qty);
+      return {
+        ...state,
+        cartItems: state.cartItems.map((item) => {
+          console.log(item.id, action.id, "ids");
+          if (item.id === action.id) {
+            console.log("Updating quantity for item with ID:", action.id);
+            return {
+              ...item,
+              quantity: action.qty,
+            };
+          } else {
+            return item;
+          }
+        }),
       };
     default:
       return state;

@@ -6,3 +6,4 @@ export const REMOVE_CART = "REMOVE_CART";
 export const SET_SELECTED_ITEM = "SET_SELECTED_ITEM";
 export const CLEAR_SELECTED_ITEM = "CLEAR_SELECTED_ITEM";
 export const CLEAR_CART = "CLEAR_CART";
+export const CHANGE_QTY = "CHANGE_QTY";
