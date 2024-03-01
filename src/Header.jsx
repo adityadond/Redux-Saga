@@ -31,11 +31,7 @@ function Header() {
           <span className="cart-count">{cartItemsCount}</span>
         </Link>
       </div>
-      <div>
-        <Link to="/signup">
-          <h3>SignUp</h3>
-        </Link>
-      </div>
+
       <div className="accountList">
         <Link to="/accountList">
           <span>Hello, Aditya</span>
