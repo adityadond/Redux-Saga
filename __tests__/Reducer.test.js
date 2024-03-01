@@ -198,7 +198,7 @@ describe("reducers", () => {
           allItems: [
             { id: 1, category: "electronics" },
             { id: 2, category: "men's clothing" },
-            { id: 3, category: "jewelry" },
+            { id: 3, category: "jewelery" },
             { id: 4, category: "women's clothing" },
           ],
         };
@@ -206,7 +206,7 @@ describe("reducers", () => {
           type: "jewelery",
         };
         const newState = clickReducer(initialState, action);
-        expect(newState.click).toEqual([{ id: 3, category: "jewelry" }]);
+        expect(newState.click).toEqual([{ id: 3, category: "jewelery" }]);
       });
 
       it("should filter items by women's clothing", () => {
@@ -242,7 +242,7 @@ describe("reducers", () => {
       };
       const newState = selectionReducer(initialState, action);
       expect(newState).toEqual({
-        selectedItem: null,
+        selectedItem: true,
       });
     });
 

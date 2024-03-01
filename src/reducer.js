@@ -92,15 +92,11 @@ export const cartReducer = (state = cartState, action) => {
         cartItems: [],
       };
     case CHANGE_QTY:
-      console.log("CHANGE_QTY action dispatched");
-      console.log("Action ID:", action.id);
-      console.log("Action Quantity:", action.qty);
       return {
         ...state,
         cartItems: state.cartItems.map((item) => {
           console.log(item.id, action.id, "ids");
           if (item.id === action.id) {
-            console.log("Updating quantity for item with ID:", action.id);
             return {
               ...item,
               quantity: action.qty,
@@ -118,6 +114,13 @@ export const cartReducer = (state = cartState, action) => {
 export const clickReducer = (state = clickSelection, action) => {
   switch (action.type) {
     case "All":
+      if (!Array.isArray(action.item)) {
+        // Check if action.item is an array
+        return {
+          ...state,
+          click: state.allItems,
+        }; // Return current state if it's not iterable
+      }
       return {
         ...state,
         allItems: action.item, // Set all items to action.item

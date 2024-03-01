@@ -3,7 +3,7 @@
 <html lang="en">
 
 <head>
-    <title>Code coverage report for App.jsx</title>
+    <title>Code coverage report for Dropdown.jsx</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="prettify.css" />
     <link rel="stylesheet" href="base.css" />
@@ -19,13 +19,13 @@
 <body>
 <div class='wrapper'>
     <div class='pad1'>
-        <h1><a href="index.html">All files</a> App.jsx</h1>
+        <h1><a href="index.html">All files</a> Dropdown.jsx</h1>
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/13</span>
+                <span class='fraction'>10/10</span>
             </div>
         
             
@@ -37,16 +37,16 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/7</span>
+                <span class='fraction'>3/3</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/7</span>
+                <span class='fraction'>10/10</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line low'></div>
+    <div class='status-line high'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -92,31 +92,26 @@
 <a name='L27'></a><a href='#L27'>27</a>
 <a name='L28'></a><a href='#L28'>28</a>
 <a name='L29'></a><a href='#L29'>29</a>
-<a name='L30'></a><a href='#L30'>30</a>
-<a name='L31'></a><a href='#L31'>31</a>
-<a name='L32'></a><a href='#L32'>32</a>
-<a name='L33'></a><a href='#L33'>33</a>
-<a name='L34'></a><a href='#L34'>34</a>
-<a name='L35'></a><a href='#L35'>35</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L30'></a><a href='#L30'>30</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">7x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">7x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">70x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -126,45 +121,35 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import React, { Suspense } from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Header from "./Header";
-import Footer from "./Footer";
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import React, { useState } from "react";
+import { useDispatch } from "react-redux";
+import { changeQty } from "./action";
 &nbsp;
-const Counter = <span class="cstat-no" title="statement not covered" >React.lazy(<span class="fstat-no" title="function not covered" >()</span> =&gt; <span class="cstat-no" title="statement not covered" >import("./Counter"))</span>;</span>
-const HomePage = <span class="cstat-no" title="statement not covered" >React.lazy(<span class="fstat-no" title="function not covered" >()</span> =&gt; <span class="cstat-no" title="statement not covered" >import("./HomePage"))</span>;</span>
-const Cart = <span class="cstat-no" title="statement not covered" >React.lazy(<span class="fstat-no" title="function not covered" >()</span> =&gt; <span class="cstat-no" title="statement not covered" >import("./Cart"))</span>;</span>
-const SignUpPage = <span class="cstat-no" title="statement not covered" >React.lazy(<span class="fstat-no" title="function not covered" >()</span> =&gt; <span class="cstat-no" title="statement not covered" >import("./SignUp"))</span>;</span>
-const Checkout = <span class="cstat-no" title="statement not covered" >React.lazy(<span class="fstat-no" title="function not covered" >()</span> =&gt; <span class="cstat-no" title="statement not covered" >import("./Checkout"))</span>;</span>
-const ProductDetails = <span class="cstat-no" title="statement not covered" >React.lazy(<span class="fstat-no" title="function not covered" >()</span> =&gt; <span class="cstat-no" title="statement not covered" >import("./ProductDetails"))</span>;</span>
+const Dropdown = ({ item }) =&gt; {
+  const [value, setValue] = useState(parseInt(item.quantity));
+  const dispatch = useDispatch();
 &nbsp;
-function <span class="fstat-no" title="function not covered" >App(</span>) {
-<span class="cstat-no" title="statement not covered" >  return (</span>
+  const handleChange = (event) =&gt; {
+    const selectedValue = parseInt(event.target.value);
+    setValue(selectedValue);
+    dispatch(changeQty(item.id, selectedValue));
+  };
+&nbsp;
+  const items = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+  return (
     &lt;div&gt;
-      &lt;BrowserRouter&gt;
-        &lt;Header /&gt;
-        &lt;Suspense fallback={&lt;div&gt;Loading...&lt;/div&gt;}&gt;
-          &lt;Routes&gt;
-            &lt;Route exact path="/" element={&lt;HomePage /&gt;} /&gt;
-            &lt;Route exact path="/counter" element={&lt;Counter /&gt;} /&gt;
-            &lt;Route exact path="/cart" element={&lt;Cart /&gt;} /&gt;
-            &lt;Route exact path="/signup" element={&lt;SignUpPage /&gt;} /&gt;
-            &lt;Route exact path="/checkout" element={&lt;Checkout /&gt;} /&gt;
-            &lt;Route exact path="/product/:id" element={&lt;ProductDetails /&gt;} /&gt;
-          &lt;/Routes&gt;
-        &lt;/Suspense&gt;
-        &lt;Footer /&gt;
-      &lt;/BrowserRouter&gt;
+      &lt;select value={value} onChange={handleChange}&gt;
+        {items.map((i) =&gt; (
+          &lt;option value={i} key={i}&gt;
+            {i}
+          &lt;/option&gt;
+        ))}
+      &lt;/select&gt;
     &lt;/div&gt;
   );
-}
+};
 &nbsp;
-export default App;
+export default Dropdown;
 &nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->

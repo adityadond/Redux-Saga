@@ -5,10 +5,7 @@ import "./smallHeader.css";
 
 function SmallHeader() {
   const dispatch = useDispatch();
-  const selectedItem = useSelector(
-    (state) => state.selectionReducer.selectedItem
-  );
-  console.log(selectedItem, "selectedItem");
+
   const items = [
     { id: 1, name: "All" },
     { id: 2, name: "men's clothing" },

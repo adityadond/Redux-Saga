@@ -2,10 +2,6 @@ import React from "react";
 import { render, fireEvent, getByText } from "@testing-library/react";
 import Checkout from "../src/Checkout";
 import { useSelector, useDispatch } from "react-redux";
-import { clearCart } from "../src/action";
-import Modal from "../src/Modal";
-import { Provider } from "react-redux";
-import store from "../src/store";
 
 jest.mock("../src/CheckOut.css", () => ({}));
 
@@ -47,17 +43,4 @@ describe("Checkout component", () => {
     expect(getByText("Item 2")).toBeInTheDocument();
     expect(getByText("Total Price: $40.00")).toBeInTheDocument();
   });
-
-  // it("should call handlePlaceOrder when place order button is clicked", () => {
-  //   const cartItems = [
-  //     { id: 1, title: "Item 1", quantity: 2, price: 10 },
-  //     { id: 2, title: "Item 2", quantity: 1, price: 20 },
-  //   ];
-  //   useSelector.mockReturnValueOnce(cartItems);
-  //   const dispatch = jest.fn();
-  //   useDispatch.mockReturnValue(dispatch);
-  //   const { getByText } = render(<Checkout />);
-  //   fireEvent.click(getByText("Place Order"));
-  //   expect(dispatch).toHaveBeenCalledWith(clearCart());
-  // });
 });

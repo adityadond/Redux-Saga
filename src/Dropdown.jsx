@@ -3,14 +3,12 @@ import { useDispatch } from "react-redux";
 import { changeQty } from "./action";
 
 const Dropdown = ({ item }) => {
-  console.log(item);
-  const [value, setValue] = useState(item.quantity);
+  const [value, setValue] = useState(parseInt(item.quantity));
   const dispatch = useDispatch();
 
   const handleChange = (event) => {
-    const selectedValue = event.target.value;
+    const selectedValue = parseInt(event.target.value);
     setValue(selectedValue);
-    console.log(selectedValue);
     dispatch(changeQty(item.id, selectedValue));
   };
 
