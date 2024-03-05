@@ -5,14 +5,22 @@ import { useParams } from "react-router-dom";
 
 function ProductDetails() {
   const dispatch = useDispatch();
-  const { id } = useParams(); // Extracting the 'id' parameter from the URL
+  const { id } = useParams();
   const state = useSelector((state) => state.productDetailsReducer);
   console.log(state, "state");
-
+  const error = useSelector((state) => state.productDetailsReducer.error);
+  const loading = useSelector((state) => state.productDetailsReducer.loading);
   useEffect(() => {
-    // Dispatching the action with the 'id' extracted from the URL
     dispatch(fetchProductDetails(id));
-  }, []); // Adding 'id' to the dependency array to trigger useEffect when it changes
+  }, []);
+
+  if (loading) {
+    return <div>Loading...</div>;
+  }
+
+  if (error) {
+    return <div>Error: {error}</div>;
+  }
 
   return (
     <div>
