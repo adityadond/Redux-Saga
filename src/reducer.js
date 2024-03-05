@@ -4,6 +4,7 @@ import {
   REMOVE_CART,
   CLEAR_CART,
   CHANGE_QTY,
+  FETCH_PRODUCT_DETAILS_SUCCESS,
 } from "./constants";
 
 import { combineReducers } from "redux";
@@ -17,7 +18,12 @@ const initialState = {
   num: 0,
   data: [],
   loading: false,
-
+  formdata: [],
+  error: null,
+};
+const productdetailsState = {
+  productdetails: [],
+  loading: false,
   error: null,
 };
 
@@ -52,6 +58,28 @@ export const reducer = (state = initialState, action) => {
         data: action.payload, // Assuming action.payload is an array of todos
         loading: false,
         error: null,
+      };
+    case "FORM_DATA": {
+      console.log("Form data", action.payload);
+      return {
+        ...state,
+        formdata: action.payload,
+      };
+    }
+
+    default:
+      return state;
+  }
+};
+
+export const productDetailsReducer = (state = productdetailsState, action) => {
+  switch (action.type) {
+    case FETCH_PRODUCT_DETAILS_SUCCESS:
+      return {
+        ...state,
+        loading: false,
+        error: null,
+        productdetails: action.payload,
       };
 
     default:
@@ -199,4 +227,5 @@ export const rootreducer = combineReducers({
   cartReducer,
   clickReducer,
   selectionReducer,
+  productDetailsReducer,
 });

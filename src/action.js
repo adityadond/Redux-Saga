@@ -4,6 +4,7 @@ import {
   REMOVE_CART,
   CLEAR_CART,
   CHANGE_QTY,
+  FETCH_PRODUCT_DETAILS,
 } from "./constants";
 import { SET_SELECTED_ITEM, CLEAR_SELECTED_ITEM } from "./constants";
 
@@ -21,6 +22,12 @@ export const decrement = () => ({
 export const fetchData = (params) => ({
   type: FETCH_DATA,
   payload: params,
+});
+
+//product details
+export const fetchProductDetails = (id) => ({
+  type: FETCH_PRODUCT_DETAILS,
+  payload: id,
 });
 
 export const addToCart = (item) => ({
@@ -59,4 +66,9 @@ export const changeQty = (id, qty) => ({
   type: CHANGE_QTY,
   id: id,
   qty: qty,
+});
+
+export const formData = (info) => ({
+  type: "FORM_DATA",
+  payload: info,
 });

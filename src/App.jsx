@@ -10,6 +10,7 @@ const SignUpPage = React.lazy(() => import("./SignUp"));
 const Checkout = React.lazy(() => import("./Checkout"));
 const ProductDetails = React.lazy(() => import("./ProductDetails"));
 const AccountList = React.lazy(() => import("./AccountList"));
+const Login = React.lazy(() => import("./Login"));
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
             <Route exact path="/checkout" element={<Checkout />} />
             <Route exact path="/product/:id" element={<ProductDetails />} />
             <Route exact path="/accountList" element={<AccountList />} />
+            <Route exact path="/login" element={<Login />} />
           </Routes>
         </Suspense>
         <Footer />

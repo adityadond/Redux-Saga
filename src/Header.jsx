@@ -9,7 +9,7 @@ function Header() {
   const cartItemsCount = useSelector(
     (state) => state.cartReducer.cartItems.length
   );
-  const { loginWithRedirect, logout, isAuthenticated } = useAuth0();
+  const { loginWithRedirect, logout, isAuthenticated, user } = useAuth0();
   console.log(isAuthenticated);
 
   return (
@@ -31,10 +31,14 @@ function Header() {
           <span className="cart-count">{cartItemsCount}</span>
         </Link>
       </div>
-
+      <div>
+        <Link to="/login">
+          <h3>Login</h3>
+        </Link>
+      </div>
       <div className="accountList">
         <Link to="/accountList">
-          <span>Hello, Aditya</span>
+          {isAuthenticated ? <span>Hi {user.name}</span> : ""}
           <h3>Accounts & List</h3>
         </Link>
       </div>
@@ -43,7 +47,6 @@ function Header() {
           <h3>Checkout</h3>
         </Link>
       </div>
-
       {isAuthenticated ? (
         <button onClick={() => logout({ returnTo: window.location.origin })}>
           Log Out
