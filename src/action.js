@@ -5,8 +5,9 @@ import {
   CLEAR_CART,
   CHANGE_QTY,
   FETCH_PRODUCT_DETAILS,
+  SET_SELECTED_ITEM,
+  CLEAR_SELECTED_ITEM,
 } from "./constants";
-import { SET_SELECTED_ITEM, CLEAR_SELECTED_ITEM } from "./constants";
 
 export const increment = () => ({
   type: "INCREMENT",

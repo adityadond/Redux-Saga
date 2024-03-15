@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">66.66% </span>
+                <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>8/12</span>
+                <span class='fraction'>0/12</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">0% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>2/2</span>
+                <span class='fraction'>0/2</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">50% </span>
+                <span class="strong">0% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>3/6</span>
+                <span class='fraction'>0/6</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">72.72% </span>
+                <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>8/11</span>
+                <span class='fraction'>0/11</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line medium'></div>
+    <div class='status-line low'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -147,20 +147,20 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -171,7 +171,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -196,7 +196,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -223,21 +223,21 @@ import Modal from "./Modal"; // Import your modal component
 import "./CheckOut.css";
 import { clearCart } from "./action";
 &nbsp;
-function Checkout() {
-  const cartItems = useSelector(<span class="fstat-no" title="function not covered" >(s</span>tate) =&gt; <span class="cstat-no" title="statement not covered" >state.cartReducer.cartItems)</span>;
-  const dispatch = useDispatch();
-  const [orderPlaced, setOrderPlaced] = useState(false);
+function <span class="fstat-no" title="function not covered" >Checkout(</span>) {
+  const cartItems = <span class="cstat-no" title="statement not covered" >useSelector(<span class="fstat-no" title="function not covered" >(s</span>tate) =&gt; <span class="cstat-no" title="statement not covered" >state.cartReducer.cartItems)</span>;</span>
+  const dispatch = <span class="cstat-no" title="statement not covered" >useDispatch();</span>
+  const [orderPlaced, setOrderPlaced] = <span class="cstat-no" title="statement not covered" >useState(false);</span>
 &nbsp;
-  const handlePlaceOrder = <span class="fstat-no" title="function not covered" >()</span> =&gt; {
+  const handlePlaceOrder = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >()</span> =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >    setOrderPlaced(true);</span>
   };
 &nbsp;
-  const handleCloseModal = <span class="fstat-no" title="function not covered" >()</span> =&gt; {
+  const handleCloseModal = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >()</span> =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >    setOrderPlaced(false);</span>
 <span class="cstat-no" title="statement not covered" >    dispatch(clearCart());</span>
   };
 &nbsp;
-  return (
+<span class="cstat-no" title="statement not covered" >  return (</span>
     &lt;div className="checkout-container"&gt;
       &lt;h2&gt;Checkout&lt;/h2&gt;
       {cartItems.length === 0 ? (
@@ -247,8 +247,8 @@ function Checkout() {
           &lt;div className="cart-items"&gt;
             &lt;h3&gt;Cart Items&lt;/h3&gt;
             &lt;ul&gt;
-              {cartItems.map((item) =&gt; (
-                &lt;li key={item.id}&gt;
+              {cartItems.map(<span class="fstat-no" title="function not covered" >(i</span>tem) =&gt; (
+<span class="cstat-no" title="statement not covered" >                &lt;li key={item.id}&gt;</span>
                   &lt;div className="item-details"&gt;
                     &lt;div&gt;
                       &lt;img
@@ -273,7 +273,7 @@ function Checkout() {
             &lt;p&gt;
               Total Price: $
               {cartItems
-                .reduce((total, item) =&gt; total + item.price * item.quantity, 0)
+                .reduce(<span class="fstat-no" title="function not covered" >(t</span>otal, item) =&gt; <span class="cstat-no" title="statement not covered" >total + item.price * item.quantity,</span> 0)
                 .toFixed(2)}
             &lt;/p&gt;
           &lt;/div&gt;
@@ -301,7 +301,7 @@ export default Checkout;
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2024-03-01T08:38:26.570Z
+                at 2024-03-14T13:47:20.546Z
             </div>
         <script src="prettify.js"></script>
         <script>

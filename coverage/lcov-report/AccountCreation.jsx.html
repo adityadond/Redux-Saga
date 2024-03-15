@@ -3,7 +3,7 @@
 <html lang="en">
 
 <head>
-    <title>Code coverage report for Dropdown.jsx</title>
+    <title>Code coverage report for AccountCreation.jsx</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="prettify.css" />
     <link rel="stylesheet" href="base.css" />
@@ -19,13 +19,13 @@
 <body>
 <div class='wrapper'>
     <div class='pad1'>
-        <h1><a href="index.html">All files</a> Dropdown.jsx</h1>
+        <h1><a href="index.html">All files</a> AccountCreation.jsx</h1>
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/10</span>
+                <span class='fraction'>0/6</span>
             </div>
         
             
@@ -39,14 +39,14 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/3</span>
+                <span class='fraction'>0/2</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/10</span>
+                <span class='fraction'>0/6</span>
             </div>
         
             
@@ -96,27 +96,23 @@
 <a name='L31'></a><a href='#L31'>31</a>
 <a name='L32'></a><a href='#L32'>32</a>
 <a name='L33'></a><a href='#L33'>33</a>
-<a name='L34'></a><a href='#L34'>34</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L34'></a><a href='#L34'>34</a>
+<a name='L35'></a><a href='#L35'>35</a>
+<a name='L36'></a><a href='#L36'>36</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -129,39 +125,49 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import React, { useState } from "react";
-import { useDispatch } from "react-redux";
-import { changeQty } from "./action";
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">// AccountCreationForm.js
+import React from "react";
+import { Formik, Form, Field, ErrorMessage } from "formik";
 &nbsp;
-const Dropdown = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >({</span> item }) =&gt; {</span>
-  const [value, setValue] = <span class="cstat-no" title="statement not covered" >useState(parseInt(item.quantity));</span>
-  const dispatch = <span class="cstat-no" title="statement not covered" >useDispatch();</span>
-&nbsp;
-  const handleChange = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >(e</span>vent) =&gt; {</span>
-    const selectedValue = <span class="cstat-no" title="statement not covered" >parseInt(event.target.value);</span>
-<span class="cstat-no" title="statement not covered" >    setValue(selectedValue);</span>
-<span class="cstat-no" title="statement not covered" >    dispatch(changeQty(item.id, selectedValue));</span>
+const AccountCreationForm = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >()</span> =&gt; {</span>
+  const initialValues = <span class="cstat-no" title="statement not covered" >{</span>
+    email: "",
+    password: "",
+    // Add other fields as needed
   };
 &nbsp;
-  const items = <span class="cstat-no" title="statement not covered" >[1, 2, 3, 4, 5, 6, 7, 8, 9, 10];</span>
+  const handleSubmit = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >(v</span>alues, { setSubmitting }) =&gt; {</span>
+    // Handle form submission here
+<span class="cstat-no" title="statement not covered" >    console.log(values);</span>
+<span class="cstat-no" title="statement not covered" >    setSubmitting(false);</span>
+  };
+&nbsp;
 <span class="cstat-no" title="statement not covered" >  return (</span>
-    &lt;div&gt;
-      &lt;select
-        value={value}
-        onChange={handleChange}
-        style={{ margin: "10px", padding: "2px" }}
-      &gt;
-        {items.map(<span class="fstat-no" title="function not covered" >(i</span>) =&gt; (
-<span class="cstat-no" title="statement not covered" >          &lt;option value={i} key={i}&gt;</span>
-            {i}
-          &lt;/option&gt;
-        ))}
-      &lt;/select&gt;
-    &lt;/div&gt;
+    &lt;Formik initialValues={initialValues} onSubmit={handleSubmit}&gt;
+      &lt;Form&gt;
+        &lt;label htmlFor="email"&gt;Email&lt;/label&gt;
+        &lt;Field type="email" id="email" name="email" /&gt;
+        &lt;ErrorMessage name="email" component="div" /&gt;
+&nbsp;
+        &lt;label htmlFor="password"&gt;Password&lt;/label&gt;
+        &lt;Field type="password" id="password" name="password" /&gt;
+        &lt;ErrorMessage name="password" component="div" /&gt;
+&nbsp;
+        &lt;button type="submit"&gt;Create Account&lt;/button&gt;
+      &lt;/Form&gt;
+    &lt;/Formik&gt;
   );
 };
 &nbsp;
-export default Dropdown;
+export default AccountCreationForm;
 &nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->

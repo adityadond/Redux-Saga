@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useMemo } from "react";
+import React, { useEffect, useMemo } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import { fetchData, addToCart } from "./action";
@@ -14,19 +14,17 @@ import { useAuth0 } from "@auth0/auth0-react";
 const HomePage = () => {
   const { isAuthenticated, isLoading, loginWithRedirect } = useAuth0();
   const dispatch = useDispatch();
-  const state = useSelector((state) => state.reducer.data);
+  const state = useSelector((state) => state.reducer);
   const small = useSelector((state) => state.clickReducer.click);
-  const loading = useSelector((state) => state.reducer.loading);
-
-  const memoizedSmall = useMemo(() => small, [small]);
+  const loading = state.loading;
 
   useEffect(() => {
     dispatch(fetchData());
   }, [dispatch]);
 
   useEffect(() => {
-    dispatch({ type: "All", item: state });
-  }, [state, dispatch]);
+    dispatch({ type: "All", item: state.data });
+  }, [state.data, dispatch]);
 
   const handleAddToCart = (item) => {
     dispatch(addToCart(item));
@@ -34,7 +32,7 @@ const HomePage = () => {
   };
 
   const toggleDescription = (id) => {
-    const updatedSmall = memoizedSmall.map((item) => {
+    const updatedSmall = small.map((item) => {
       if (item.id === id) {
         return { ...item, showFullDescription: !item.showFullDescription };
       }
@@ -51,11 +49,11 @@ const HomePage = () => {
     return (
       <div className="main_homepage">
         <h1>Please sign in to view the homepage</h1>
-
-        <Button onClick={() => loginWithRedirect()}>Log In</Button>
+        <Button onClick={loginWithRedirect}>Log In</Button>
       </div>
     );
   }
+
   return (
     <div className="main_homepage">
       <SmallHeader />
@@ -67,7 +65,7 @@ const HomePage = () => {
           <div>Loading...</div>
         ) : (
           <div className="card-container">
-            {memoizedSmall.map((item) => (
+            {small.map((item) => (
               <div key={item.id} className="card">
                 <ul className="ulcard">
                   <li>Title: {item.title}</li>

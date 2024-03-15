@@ -3,19 +3,19 @@ import { useDispatch, useSelector } from "react-redux";
 import { removeCart } from "./action";
 import { useNavigate } from "react-router-dom";
 import Dropdown from "./Dropdown";
-import "./Cart.css"; // Import CSS file for styling
+import "./Cart.css";
 
 function Cart() {
   const cartItems = useSelector((state) => state.cartReducer.cartItems);
   const dispatch = useDispatch();
-  const history = useNavigate(); // Initialize useHistory hook
+  const history = useNavigate();
 
   const handleRemoveFromCart = (id) => {
     dispatch(removeCart(id));
   };
 
   const handleProceedToCheckout = () => {
-    history("/checkout"); // Navigate to checkout page
+    history("/checkout");
   };
 
   return (

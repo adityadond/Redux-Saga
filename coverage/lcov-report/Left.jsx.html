@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>9/9</span>
+                <span class='fraction'>0/9</span>
             </div>
         
             
@@ -37,16 +37,16 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">0% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>4/4</span>
+                <span class='fraction'>0/4</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>9/9</span>
+                <span class='fraction'>0/9</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line high'></div>
+    <div class='status-line low'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -117,34 +117,34 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">15x</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -164,12 +164,12 @@ import { useDispatch } from "react-redux";
 import { clickAction } from "./action";
 import "./Left.css";
 &nbsp;
-function Left() {
-  const dispatch = useDispatch();
+function <span class="fstat-no" title="function not covered" >Left(</span>) {
+  const dispatch = <span class="cstat-no" title="statement not covered" >useDispatch();</span>
 &nbsp;
-  const [selectedCheckbox, setSelectedCheckbox] = useState(false);
+  const [selectedCheckbox, setSelectedCheckbox] = <span class="cstat-no" title="statement not covered" >useState(false);</span>
 &nbsp;
-  const items = [
+  const items = <span class="cstat-no" title="statement not covered" >[</span>
     { id: 1, name: "All" },
     { id: 2, name: "men's clothing" },
     { id: 3, name: "electronics" },
@@ -177,22 +177,22 @@ function Left() {
     { id: 5, name: "women's clothing" },
   ];
 &nbsp;
-  const handleCheckboxChange = (itemName) =&gt; {
-    setSelectedCheckbox(itemName); // Update selected checkbox state
-    dispatch(clickAction(itemName));
+  const handleCheckboxChange = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >(i</span>temName) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >    setSelectedCheckbox(itemName); </span>// Update selected checkbox state
+<span class="cstat-no" title="statement not covered" >    dispatch(clickAction(itemName));</span>
   };
 &nbsp;
-  return (
+<span class="cstat-no" title="statement not covered" >  return (</span>
     &lt;&gt;
-      {items.map((item) =&gt; (
-        &lt;div key={item.id} className="leftcheckbox"&gt;
+      {items.map(<span class="fstat-no" title="function not covered" >(i</span>tem) =&gt; (
+<span class="cstat-no" title="statement not covered" >        &lt;div key={item.id} className="leftcheckbox"&gt;</span>
           &lt;div className="check"&gt;
             &lt;input
               type="checkbox"
               id={item.id}
               value={item.name}
               checked={selectedCheckbox === item.name} // Check if the current item matches the selected checkbox
-              onChange={() =&gt; handleCheckboxChange(item.name)}
+              onChange={<span class="fstat-no" title="function not covered" >()</span> =&gt; <span class="cstat-no" title="statement not covered" >handleCheckboxChange(item.name)}</span>
             /&gt;
           &lt;/div&gt;
           &lt;div&gt;
@@ -214,7 +214,7 @@ export default Left;
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2024-03-01T08:38:26.570Z
+                at 2024-03-14T13:47:20.546Z
             </div>
         <script src="prettify.js"></script>
         <script>

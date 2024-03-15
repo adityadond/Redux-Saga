@@ -10,35 +10,22 @@ import {
 import { combineReducers } from "redux";
 import { SET_SELECTED_ITEM, CLEAR_SELECTED_ITEM } from "./constants";
 
-const initialCheck = {
-  selectedItem: false,
-};
-
 const initialState = {
+  selectedItem: false,
   num: 0,
   data: [],
   loading: false,
   formdata: [],
   error: null,
-};
-const productdetailsState = {
   productdetails: [],
   loading: false,
   error: null,
-};
-
-const cartState = {
   cartItems: [],
-};
-
-const clickSelection = {
   click: [],
-  allItems: [], // Initialize all items
-};
-
-const check = {
+  allItems: [],
   selectedItem1: false,
 };
+
 export const reducer = (state = initialState, action) => {
   switch (action.type) {
     case "INCREMENT":
@@ -55,7 +42,7 @@ export const reducer = (state = initialState, action) => {
     case FETCH_DATA_SUCCESS:
       return {
         ...state,
-        data: action.payload, // Assuming action.payload is an array of todos
+        data: action.payload,
         loading: false,
         error: null,
       };
@@ -72,7 +59,7 @@ export const reducer = (state = initialState, action) => {
   }
 };
 
-export const productDetailsReducer = (state = productdetailsState, action) => {
+export const productDetailsReducer = (state = initialState, action) => {
   switch (action.type) {
     case FETCH_PRODUCT_DETAILS_SUCCESS:
       return {
@@ -86,7 +73,7 @@ export const productDetailsReducer = (state = productdetailsState, action) => {
       return state;
   }
 };
-export const cartReducer = (state = cartState, action) => {
+export const cartReducer = (state = initialState, action) => {
   switch (action.type) {
     case ADD_TO_CART:
       // Check if the item is already in the cart
@@ -139,7 +126,7 @@ export const cartReducer = (state = cartState, action) => {
   }
 };
 
-export const clickReducer = (state = clickSelection, action) => {
+export const clickReducer = (state = initialState, action) => {
   switch (action.type) {
     case "All":
       if (!Array.isArray(action.item)) {
@@ -191,7 +178,7 @@ export const clickReducer = (state = clickSelection, action) => {
       return state;
   }
 };
-export const selectionReducer = (state = initialCheck, action) => {
+export const selectionReducer = (state = initialState, action) => {
   switch (action.type) {
     case SET_SELECTED_ITEM:
       return {
@@ -208,7 +195,7 @@ export const selectionReducer = (state = initialCheck, action) => {
   }
 };
 
-export const clearCheckboxReducer = (state = check, action) => {
+export const clearCheckboxReducer = (state = initialState, action) => {
   switch (action.type) {
     case CLEAR_SELECTED_ITEM:
       return {
