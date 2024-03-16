@@ -10,7 +10,6 @@ import {
 } from "./constants";
 
 function* fetchDataSaga() {
-  console.log("kanabava");
   try {
     const response = yield call(axios.get, "https://fakestoreapi.com/products");
     yield put({ type: FETCH_DATA_SUCCESS, payload: response.data });

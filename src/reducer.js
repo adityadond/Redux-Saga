@@ -24,6 +24,7 @@ const initialState = {
   click: [],
   allItems: [],
   selectedItem1: false,
+  checkValue: false,
 };
 
 export const reducer = (state = initialState, action) => {
@@ -134,12 +135,14 @@ export const clickReducer = (state = initialState, action) => {
         return {
           ...state,
           click: state.allItems,
+          checkValue: action.checkValue,
         }; // Return current state if it's not iterable
       }
       return {
         ...state,
         allItems: action.item, // Set all items to action.item
         click: [...action.item], // Copy action.item to click
+        checkValue: action.checkValue,
       };
     case "men's clothing":
       const mensClothing = state.allItems.filter(
@@ -147,7 +150,8 @@ export const clickReducer = (state = initialState, action) => {
       );
       return {
         ...state,
-        click: mensClothing, // Set items filtered by men's clothing
+        click: mensClothing,
+        checkValue: action.checkValue, // Set items filtered by men's clothing
       };
     case "electronics":
       const electronics = state.allItems.filter(
@@ -155,7 +159,8 @@ export const clickReducer = (state = initialState, action) => {
       );
       return {
         ...state,
-        click: electronics, // Set items filtered by electronics
+        click: electronics,
+        checkValue: action.checkValue, // Set items filtered by electronics
       };
     case "jewelery":
       const jewelry = state.allItems.filter(
@@ -163,7 +168,8 @@ export const clickReducer = (state = initialState, action) => {
       );
       return {
         ...state,
-        click: jewelry, // Set items filtered by jewelry
+        click: jewelry,
+        checkValue: action.checkValue, // Set items filtered by jewelry
       };
     case "women's clothing":
       const womensClothing = state.allItems.filter(
@@ -171,7 +177,8 @@ export const clickReducer = (state = initialState, action) => {
       );
       return {
         ...state,
-        click: womensClothing, // Set items filtered by women's clothing
+        click: womensClothing,
+        checkValue: action.checkValue, // Set items filtered by women's clothing
       };
 
     default:

@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { clickAction } from "./action";
 import "./smallHeader.css";
 
 function SmallHeader() {
+  const [checkValue, setCheckValue] = useState(true);
   const dispatch = useDispatch();
 
   const items = [
@@ -15,7 +16,7 @@ function SmallHeader() {
   ];
 
   const clickHandler = (itemName) => {
-    dispatch(clickAction(itemName));
+    dispatch(clickAction(itemName, checkValue));
   };
 
   const clickHandlerWithRipple = (itemName, e) => {

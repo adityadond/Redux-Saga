@@ -55,8 +55,9 @@ export const clearCheckBox = () => {
   };
 };
 
-export const clickAction = (itemName) => ({
-  type: itemName, // Use itemName as the action type
+export const clickAction = (itemName, checkValue) => ({
+  type: itemName,
+  checkValue: checkValue, // Use itemName as the action type
 });
 
 export const clearCart = () => ({
