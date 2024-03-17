@@ -1,19 +1,10 @@
-import React, { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { fetchProductDetails } from "./action";
+import React from "react";
+import useProductDetail from "./useProductDetail";
 import { useParams } from "react-router-dom";
 
 function ProductDetails() {
-  const dispatch = useDispatch();
   const { id } = useParams();
-  const state = useSelector((state) => state.productDetailsReducer);
-  console.log(state, "state");
-  const error = useSelector((state) => state.productDetailsReducer.error);
-  const loading = useSelector((state) => state.productDetailsReducer.loading);
-  useEffect(() => {
-    dispatch(fetchProductDetails(id));
-  }, []);
-
+  const { state, error, loading } = useProductDetail(id);
   if (loading) {
     return <div>Loading...</div>;
   }
