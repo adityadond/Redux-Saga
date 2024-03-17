@@ -9,9 +9,11 @@ function useProductDetails(id) {
   console.log(state, "state");
   const error = useSelector((state) => state.productDetailsReducer.error);
   const loading = useSelector((state) => state.productDetailsReducer.loading);
+
   useEffect(() => {
     dispatch(fetchProductDetails(id));
   }, []);
+
   return { state, error, loading };
 }
 export default useProductDetails;
