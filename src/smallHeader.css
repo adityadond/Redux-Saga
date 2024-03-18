@@ -14,6 +14,7 @@
 .smallHeader-item {
   position: relative;
   cursor: pointer;
+  text-transform: capitalize;
 }
 
 .ripple {
