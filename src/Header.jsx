@@ -20,6 +20,12 @@ function Header() {
         </Link>
       </div>
       <div>
+        <Link to="/class-components">
+          <h3>Class Component</h3>
+        </Link>
+      </div>
+
+      <div>
         <Link to="/counter">
           <h3>Counter</h3>
         </Link>

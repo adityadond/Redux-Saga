@@ -11,6 +11,7 @@ const Checkout = React.lazy(() => import("./Checkout"));
 const ProductDetails = React.lazy(() => import("./ProductDetails"));
 const AccountList = React.lazy(() => import("./AccountList"));
 const Login = React.lazy(() => import("./Login"));
+const ClassComponents = React.lazy(() => import("./ClassComponents"));
 
 function App() {
   return (
@@ -27,6 +28,11 @@ function App() {
             <Route exact path="/product/:id" element={<ProductDetails />} />
             <Route exact path="/accountList" element={<AccountList />} />
             <Route exact path="/login" element={<Login />} />
+            <Route
+              exact
+              path="/class-components"
+              element={<ClassComponents prop="aditya" />}
+            />
           </Routes>
         </Suspense>
         <Footer />
