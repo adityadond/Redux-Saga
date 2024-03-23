@@ -7,6 +7,9 @@ import {
   FETCH_PRODUCT_DETAILS,
   FETCH_PRODUCT_DETAILS_SUCCESS,
   FETCH_PRODUCT_DETAILS_ERROR,
+  FETCH_SAGA_PRODUCT,
+  FETCH_SAGA_PRODUCT_SUCCESS,
+  FETCH_CLASS_DATA_ERROR,
 } from "./constants";
 
 function* fetchDataSaga() {
@@ -36,10 +39,26 @@ function* fetchProductDetailsSaga(action) {
   }
 }
 
+/**/ /****************************** */
+
+//sagaa class component
+function* fetchDataSagaClass() {
+  try {
+    const response = yield call(axios.get, "http://localhost:3000/1");
+    yield put({ type: FETCH_SAGA_PRODUCT_SUCCESS, payload: response.data });
+  } catch (error) {
+    yield put({ type: FETCH_CLASS_DATA_ERROR, payload: error.message });
+  }
+}
+
 export function* watchFetchData() {
   yield takeLatest(FETCH_DATA, fetchDataSaga);
 }
 
 export function* watchFetchProductDetails() {
   yield takeLatest(FETCH_PRODUCT_DETAILS, fetchProductDetailsSaga);
+}
+
+export function* watchSagaFetchData() {
+  yield takeLatest(FETCH_SAGA_PRODUCT, fetchDataSagaClass);
 }

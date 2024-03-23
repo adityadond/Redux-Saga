@@ -5,10 +5,13 @@ import {
   CLEAR_CART,
   CHANGE_QTY,
   FETCH_PRODUCT_DETAILS_SUCCESS,
+  SET_SELECTED_ITEM,
+  CLEAR_SELECTED_ITEM,
+  FETCH_SAGA_PRODUCT,
+  FETCH_SAGA_PRODUCT_SUCCESS,
 } from "./constants";
 
 import { combineReducers } from "redux";
-import { SET_SELECTED_ITEM, CLEAR_SELECTED_ITEM } from "./constants";
 
 const initialState = {
   selectedItem: false,
@@ -25,6 +28,7 @@ const initialState = {
   allItems: [],
   selectedItem1: false,
   checkValue: false,
+  sagaProduct: [],
 };
 
 export const reducer = (state = initialState, action) => {
@@ -216,10 +220,23 @@ export const clearCheckboxReducer = (state = initialState, action) => {
 
 export default clickReducer;
 
+export const sagaReducer = (state = initialState, action) => {
+  switch (action.type) {
+    case FETCH_SAGA_PRODUCT_SUCCESS:
+      return {
+        ...state,
+        sagaProduct: action.payload,
+      };
+    default:
+      return state;
+  }
+};
+
 export const rootreducer = combineReducers({
   reducer,
   cartReducer,
   clickReducer,
   selectionReducer,
   productDetailsReducer,
+  sagaReducer,
 });

@@ -12,6 +12,7 @@ const ProductDetails = React.lazy(() => import("./ProductDetails"));
 const AccountList = React.lazy(() => import("./AccountList"));
 const Login = React.lazy(() => import("./Login"));
 const ClassComponents = React.lazy(() => import("./ClassComponents"));
+const SagaJson = React.lazy(() => import("./SagaJson"));
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
             <Route exact path="/product/:id" element={<ProductDetails />} />
             <Route exact path="/accountList" element={<AccountList />} />
             <Route exact path="/login" element={<Login />} />
+            <Route exact path="/sagaJson" element={<SagaJson />} />
             <Route
               exact
               path="/class-components"

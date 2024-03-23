@@ -7,6 +7,7 @@ import {
   FETCH_PRODUCT_DETAILS,
   SET_SELECTED_ITEM,
   CLEAR_SELECTED_ITEM,
+  FETCH_SAGA_PRODUCT,
 } from "./constants";
 
 export const increment = () => ({
@@ -73,4 +74,8 @@ export const changeQty = (id, qty) => ({
 export const formData = (info) => ({
   type: "FORM_DATA",
   payload: info,
+});
+
+export const sagaProduct = () => ({
+  type: FETCH_SAGA_PRODUCT,
 });

@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { increment } from "./action"; // Import your action creator function
+import { Link } from "react-router-dom";
 
 export class ClassComponents extends Component {
   constructor(props) {
@@ -45,6 +46,10 @@ export class ClassComponents extends Component {
     return (
       <div>
         <button onClick={this.handleIncrementClick}>Increment</button>
+        <br></br>
+        <Link to="/sagaJson" style={{ padding: "500px" }}>
+          Saga
+        </Link>
         <div>ClassComponents {this.props.num}</div>
         {this.state.updatedFromProps && (
           <div>Component Updated from Props!</div>
