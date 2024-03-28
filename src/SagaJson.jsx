@@ -1,15 +1,20 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { sagaProduct } from "./action";
+import { sagaProduct, postSagaProduct } from "./action";
 
 const SagaJson = () => {
   const dispatch = useDispatch();
   const sagaProductData = useSelector((state) => state.sagaReducer.sagaProduct);
 
   useEffect(() => {
-    // Call sagaProduct action when the component is mounted
     dispatch(sagaProduct());
   }, [dispatch]);
+  const clickHandler = () => {
+    const postData = {
+      data: 1,
+    };
+    dispatch(postSagaProduct(postData));
+  };
 
   console.log(sagaProductData, "json");
   return (
@@ -23,6 +28,7 @@ const SagaJson = () => {
           </li>
         ))}
       </ul>
+      <button onClick={clickHandler}>Click Me</button>
     </div>
   );
 };

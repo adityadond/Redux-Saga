@@ -24,30 +24,24 @@ export class ClassComponents extends Component {
     this.timeoutId = setTimeout(() => {
       console.log("Action performed after 2 seconds");
     }, 2000);
-    console.log("1. componentDidMount");
   }
 
   componentWillUnmount() {
     clearTimeout(this.timeoutId);
-    console.log("6. componentWillUnmount");
   }
 
-  componentDidUpdate(prevProps, prevState) {
-    console.log("3. componentDidUpdate", prevProps, prevState);
-  }
-
-  getSnapshotBeforeUpdate(prevProps, prevState) {
-    console.log("4. getSnapshotBeforeUpdate", prevProps, prevState);
-    return null;
-  }
+  handleIncrementClick = (e) => {
+    e.preventDefault(); // Prevent the default behavior (navigation)
+    this.props.increment();
+  };
 
   render() {
     console.log("2. render");
     return (
       <div>
         <button onClick={this.handleIncrementClick}>Increment</button>
-        <br></br>
-        <Link to="/sagaJson" style={{ padding: "500px" }}>
+        <br />
+        <Link to="/sagaJson" style={{ margin: "200px" }}>
           Saga
         </Link>
         <div>ClassComponents {this.props.num}</div>
@@ -57,10 +51,6 @@ export class ClassComponents extends Component {
       </div>
     );
   }
-
-  handleIncrementClick = () => {
-    this.props.increment();
-  };
 }
 
 const mapStateToProps = (state) => {

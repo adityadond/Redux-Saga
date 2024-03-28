@@ -8,6 +8,8 @@ import {
   SET_SELECTED_ITEM,
   CLEAR_SELECTED_ITEM,
   FETCH_SAGA_PRODUCT,
+  POST_SAGA_PRODUCT,
+  POST_SAGA_PRODUCT_SUCCESS,
 } from "./constants";
 
 export const increment = () => ({
@@ -78,4 +80,9 @@ export const formData = (info) => ({
 
 export const sagaProduct = () => ({
   type: FETCH_SAGA_PRODUCT,
+});
+
+export const postSagaProduct = (data) => ({
+  type: POST_SAGA_PRODUCT_SUCCESS,
+  payload: data,
 });

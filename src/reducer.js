@@ -9,6 +9,9 @@ import {
   CLEAR_SELECTED_ITEM,
   FETCH_SAGA_PRODUCT,
   FETCH_SAGA_PRODUCT_SUCCESS,
+  POST_CLASS_DATA_SUCESS,
+  POST_SAGA_PRODUCT,
+  POST_SAGA_PRODUCT_SUCCESS,
 } from "./constants";
 
 import { combineReducers } from "redux";
@@ -29,6 +32,7 @@ const initialState = {
   selectedItem1: false,
   checkValue: false,
   sagaProduct: [],
+  postSagaProduct: [],
 };
 
 export const reducer = (state = initialState, action) => {
@@ -226,6 +230,11 @@ export const sagaReducer = (state = initialState, action) => {
       return {
         ...state,
         sagaProduct: action.payload,
+      };
+    case POST_SAGA_PRODUCT_SUCCESS:
+      return {
+        ...state,
+        postSagaProduct: action.payload,
       };
     default:
       return state;
