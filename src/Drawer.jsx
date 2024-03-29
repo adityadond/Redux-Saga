@@ -1,7 +1,8 @@
 import React from "react";
 import "./Drawer.css"; // Import your CSS file for styling
+import CloseIcon from "@mui/icons-material/Close";
 
-const Drawer = ({ isOpen, onClose, children }) => {
+const Drawer = ({ isOpen, onClose }) => {
   const handleBackdropClick = (e) => {
     if (e.target === e.currentTarget) {
       onClose(); // Close the drawer if user clicks on backdrop
@@ -16,8 +17,10 @@ const Drawer = ({ isOpen, onClose, children }) => {
             {/* Add your content inside the drawer */}
             <h2>Drawer Content</h2>
             <p>This is some example content inside the drawer.</p>
-            <button onClick={onClose}>Close Drawer</button>
           </div>
+          <CloseIcon onClick={onClose} className="closebutton">
+            Close Drawer
+          </CloseIcon>
         </div>
       )}
     </>
