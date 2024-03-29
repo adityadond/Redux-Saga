@@ -1,19 +1,32 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Header.css";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { FaShoppingCart } from "react-icons/fa"; // Import the cart icon from react-icons/fa
 import { useAuth0 } from "@auth0/auth0-react";
+import DehazeIcon from "@mui/icons-material/Dehaze";
+import Drawer from "./Drawer";
 
 function Header() {
+  const [isDrawerOpen, setIsDrawerOpen] = useState(false);
   const cartItemsCount = useSelector(
     (state) => state.cartReducer.cartItems.length
   );
   const { loginWithRedirect, logout, isAuthenticated, user } = useAuth0();
   console.log(isAuthenticated);
 
+  const opendrawerHandler = () => {
+    setIsDrawerOpen(!isDrawerOpen);
+  };
+
   return (
     <div className="header">
+      <div>
+        <DehazeIcon onClick={opendrawerHandler} />
+      </div>
+      {isDrawerOpen && (
+        <Drawer isOpen={isDrawerOpen} onClose={() => setIsDrawerOpen(false)} />
+      )}
       <div>
         <Link to="/">
           <h3>Home</h3>

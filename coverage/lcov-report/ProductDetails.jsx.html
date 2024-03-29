@@ -25,28 +25,28 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/17</span>
+                <span class='fraction'>0/8</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/6</span>
+                <span class='fraction'>0/4</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/6</span>
+                <span class='fraction'>0/1</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/14</span>
+                <span class='fraction'>0/8</span>
             </div>
         
             
@@ -106,7 +106,10 @@
 <a name='L41'></a><a href='#L41'>41</a>
 <a name='L42'></a><a href='#L42'>42</a>
 <a name='L43'></a><a href='#L43'>43</a>
-<a name='L44'></a><a href='#L44'>44</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L44'></a><a href='#L44'>44</a>
+<a name='L45'></a><a href='#L45'>45</a>
+<a name='L46'></a><a href='#L46'>46</a>
+<a name='L47'></a><a href='#L47'>47</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -114,13 +117,6 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -130,12 +126,8 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -149,21 +141,28 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import React, { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { fetchProductDetails } from "./action";
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import React from "react";
+import useProductDetail from "./useProductDetail";
 import { useParams } from "react-router-dom";
+import "./ProductDetails.css"; // Import CSS file for styling
 &nbsp;
 function <span class="fstat-no" title="function not covered" >ProductDetails(</span>) {
-  const dispatch = <span class="cstat-no" title="statement not covered" >useDispatch();</span>
   const { id } = <span class="cstat-no" title="statement not covered" >useParams();</span>
-  const state = <span class="cstat-no" title="statement not covered" >useSelector(<span class="fstat-no" title="function not covered" >(s</span>tate) =&gt; <span class="cstat-no" title="statement not covered" >state.productDetailsReducer)</span>;</span>
-<span class="cstat-no" title="statement not covered" >  console.log(state, "state");</span>
-  const error = <span class="cstat-no" title="statement not covered" >useSelector(<span class="fstat-no" title="function not covered" >(s</span>tate) =&gt; <span class="cstat-no" title="statement not covered" >state.productDetailsReducer.error)</span>;</span>
-  const loading = <span class="cstat-no" title="statement not covered" >useSelector(<span class="fstat-no" title="function not covered" >(s</span>tate) =&gt; <span class="cstat-no" title="statement not covered" >state.productDetailsReducer.loading)</span>;</span>
-<span class="cstat-no" title="statement not covered" >  useEffect(<span class="fstat-no" title="function not covered" >()</span> =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >    dispatch(fetchProductDetails(id));</span>
-  }, []);
+  const { state, error, loading } = <span class="cstat-no" title="statement not covered" >useProductDetail(id);</span>
 &nbsp;
 <span class="cstat-no" title="statement not covered" >  if (loading) {</span>
 <span class="cstat-no" title="statement not covered" >    return &lt;div&gt;Loading...&lt;/div&gt;;</span>
@@ -173,19 +172,29 @@ function <span class="fstat-no" title="function not covered" >ProductDetails(</s
 <span class="cstat-no" title="statement not covered" >    return &lt;div&gt;Error: {error}&lt;/div&gt;;</span>
   }
 &nbsp;
+  const { category, description, image, price, rating, title } =
+<span class="cstat-no" title="statement not covered" >    state.productdetails;</span>
+&nbsp;
 <span class="cstat-no" title="statement not covered" >  return (</span>
-    &lt;div&gt;
-      {" "}
-      &lt;div&gt;
-        &lt;h2&gt;Product Details&lt;/h2&gt;
-        &lt;ul&gt;
-          {Object.entries(state.productdetails).map(<span class="fstat-no" title="function not covered" >([</span>key, value]) =&gt; (
-<span class="cstat-no" title="statement not covered" >            &lt;li key={key}&gt;</span>
-              &lt;strong&gt;{key}:&lt;/strong&gt;{" "}
-              {typeof value === "object" ? JSON.stringify(value) : value}
-            &lt;/li&gt;
-          ))}
-        &lt;/ul&gt;
+    &lt;div className="product-details-container"&gt;
+      &lt;h2 className="product-details-title"&gt;{title}&lt;/h2&gt;
+      &lt;div className="product-details-content"&gt;
+        &lt;div className="product-details-image"&gt;
+          &lt;img src={image} alt={title} /&gt;
+        &lt;/div&gt;
+        &lt;div className="product-details-info"&gt;
+          &lt;p&gt;
+            &lt;strong&gt;Category:&lt;/strong&gt;{" "}
+            &lt;span className="category"&gt;{category}&lt;/span&gt;
+          &lt;/p&gt;
+          &lt;p&gt;
+            &lt;strong&gt;Description:&lt;/strong&gt; {description}
+          &lt;/p&gt;
+          &lt;p&gt;
+            &lt;strong&gt;Price:&lt;/strong&gt; ${price}
+          &lt;/p&gt;
+          &lt;p&gt;&lt;/p&gt;
+        &lt;/div&gt;
       &lt;/div&gt;
     &lt;/div&gt;
   );
@@ -199,7 +208,7 @@ export default ProductDetails;
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2024-03-14T13:47:20.546Z
+                at 2024-03-29T06:20:00.718Z
             </div>
         <script src="prettify.js"></script>
         <script>

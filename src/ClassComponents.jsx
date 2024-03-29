@@ -38,17 +38,19 @@ export class ClassComponents extends Component {
   render() {
     console.log("2. render");
     return (
-      <div>
-        <button onClick={this.handleIncrementClick}>Increment</button>
-        <br />
-        <Link to="/sagaJson" style={{ margin: "200px" }}>
-          Saga
-        </Link>
-        <div>ClassComponents {this.props.num}</div>
-        {this.state.updatedFromProps && (
-          <div>Component Updated from Props!</div>
-        )}
-      </div>
+      <>
+        <div>
+          <button onClick={this.handleIncrementClick}>Increment</button>
+          <br />
+          <Link to="/sagaJson" style={{ margin: "200px" }}>
+            Saga
+          </Link>
+          <div>ClassComponents {this.props.num}</div>
+          {this.state.updatedFromProps && (
+            <div>Component Updated from Props!</div>
+          )}
+        </div>
+      </>
     );
   }
 }
