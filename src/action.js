@@ -82,7 +82,6 @@ export const sagaProduct = () => ({
   type: FETCH_SAGA_PRODUCT,
 });
 
-export const postSagaProduct = (data) => ({
-  type: POST_SAGA_PRODUCT_SUCCESS,
-  payload: data,
+export const postSagaProduct = () => ({
+  type: POST_SAGA_PRODUCT,
 });

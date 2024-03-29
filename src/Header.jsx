@@ -19,6 +19,8 @@ function Header() {
     setIsDrawerOpen(!isDrawerOpen);
   };
 
+  const changeHandler = () => {};
+
   return (
     <div className="header">
       <div>
@@ -42,6 +44,13 @@ function Header() {
         <Link to="/counter">
           <h3>Counter</h3>
         </Link>
+      </div>
+      <div>
+        <input
+          type="text"
+          placeholder="Search products"
+          onChange={changeHandler}
+        />
       </div>
       <div>
         <Link to="/cart" className="cart-link">

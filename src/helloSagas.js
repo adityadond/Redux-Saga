@@ -52,13 +52,28 @@ function* fetchDataSagaClass() {
     yield put({ type: FETCH_CLASS_DATA_ERROR, payload: error.message });
   }
 }
-
-function* postData({ payload }) {
+function* postData({ payload = {} }) {
   try {
-    const response = yield call(axios.post, "http://localhost:8000/1", payload);
-    yield put({ type: POST_CLASS_DATA_SUCESS, payload: response.data });
-    // Handle the response if needed
+    const response = yield call(
+      axios.post,
+      "https://fakestoreapi.com/products",
+      {
+        title: "test product",
+        price: 13.5,
+        description: "lorem ipsum set",
+        image: "https://i.pravatar.cc",
+        category: "electronic",
+      }
+    );
+    if (response.status === 200) {
+      // Handle 200 status code as successful
+      yield put({ type: POST_CLASS_DATA_SUCESS, payload: response.data });
+      console.log("Data posted successfully:", response.data);
+    } else {
+      console.error("Unexpected response status:", response.status);
+    }
   } catch (error) {
+    console.error("Error posting data:", error.message);
     // Handle error if needed
   }
 }

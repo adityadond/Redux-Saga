@@ -4,16 +4,13 @@ import { sagaProduct, postSagaProduct } from "./action";
 
 const SagaJson = () => {
   const dispatch = useDispatch();
-  const sagaProductData = useSelector((state) => state.sagaReducer.sagaProduct);
+  const sagaProductData = useSelector(
+    (state) => state.sagaReducer.postSagaProduct
+  );
+  console.log(sagaProductData, "saga product");
 
-  useEffect(() => {
-    dispatch(sagaProduct());
-  }, [dispatch]);
   const clickHandler = () => {
-    const postData = {
-      data: 1,
-    };
-    dispatch(postSagaProduct(postData));
+    dispatch(postSagaProduct());
   };
 
   console.log(sagaProductData, "json");
