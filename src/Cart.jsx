@@ -31,8 +31,8 @@ function Cart() {
                 <li key={item.id}>
                   <div className="item-details">
                     <img
-                      src={item.image}
-                      alt={item.title}
+                      src={item?.image}
+                      alt={item?.title}
                       className="item-image"
                     />
 

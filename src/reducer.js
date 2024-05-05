@@ -33,6 +33,7 @@ const initialState = {
   checkValue: false,
   sagaProduct: [],
   postSagaProduct: [],
+  dates: [],
 };
 
 export const reducer = (state = initialState, action) => {
@@ -235,6 +236,12 @@ export const sagaReducer = (state = initialState, action) => {
       return {
         ...state,
         postSagaProduct: action.payload,
+      };
+    case "SAVE_DATES":
+      console.log(action.payload);
+      return {
+        ...state,
+        dates: action.payload,
       };
     default:
       return state;

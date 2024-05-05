@@ -85,3 +85,10 @@ export const sagaProduct = () => ({
 export const postSagaProduct = () => ({
   type: POST_SAGA_PRODUCT,
 });
+
+export const saveDates = (start, end) => {
+  return {
+    type: "SAVE_DATES",
+    payload: { start, end },
+  };
+};
