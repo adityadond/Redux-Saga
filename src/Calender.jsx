@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./Calender.css"; // Import CSS file for styling
 import { useDispatch } from "react-redux";
 import { saveDates } from "./action";
+import { useNavigate } from "react-router-dom";
 
 function Calendar() {
   const [startDate, setStartDate] = useState("");
@@ -9,6 +10,7 @@ function Calendar() {
   const [endButton, setEndButton] = useState(false);
   const [endDate, setEndDate] = useState("");
   const dispatch = useDispatch();
+  const history = useNavigate();
 
   const handleStartDateChange = (e) => {
     setStartDate(e.target.value);
@@ -22,7 +24,12 @@ function Calendar() {
   };
   const continueHandler = () => {
     console.log("clicked");
-    dispatch(saveDates(startDate, endDate));
+    if (startDate === endDate) {
+      alert("Start date and end date cannot be same");
+    } else {
+      dispatch(saveDates(startDate, endDate));
+      history("/nextpage");
+    }
   };
 
   return (

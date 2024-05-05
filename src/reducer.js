@@ -86,7 +86,12 @@ export const productDetailsReducer = (state = initialState, action) => {
 export const cartReducer = (state = initialState, action) => {
   switch (action.type) {
     case ADD_TO_CART:
-      // Check if the item is already in the cart
+      // Ensure action.item is defined and has an id property
+      if (!action.item || !action.item.id) {
+        console.error("Invalid action item:", action.item);
+        return state;
+      }
+
       const existingItemIndex = state.cartItems.findIndex(
         (item) => item.id === action.item.id
       );
@@ -106,31 +111,7 @@ export const cartReducer = (state = initialState, action) => {
           cartItems: [...state.cartItems, { ...action.item, quantity: 1 }],
         };
       }
-    case REMOVE_CART:
-      return {
-        ...state,
-        cartItems: state.cartItems.filter((item) => item.id !== action.itemId),
-      };
-    case CLEAR_CART:
-      return {
-        ...state,
-        cartItems: [],
-      };
-    case CHANGE_QTY:
-      return {
-        ...state,
-        cartItems: state.cartItems.map((item) => {
-          console.log(item.id, action.id, "ids");
-          if (item.id === action.id) {
-            return {
-              ...item,
-              quantity: action.qty,
-            };
-          } else {
-            return item;
-          }
-        }),
-      };
+    // Other cases...
     default:
       return state;
   }

@@ -13,6 +13,7 @@ const AccountList = React.lazy(() => import("./AccountList"));
 const Login = React.lazy(() => import("./Login"));
 const ClassComponents = React.lazy(() => import("./ClassComponents"));
 const SagaJson = React.lazy(() => import("./SagaJson"));
+const PlanSelection = React.lazy(() => import("./PlanSelection"));
 
 function App() {
   return (
@@ -35,6 +36,7 @@ function App() {
               path="/class-components"
               element={<ClassComponents prop="aditya" />}
             />
+            <Route exact path="/nextpage" element={<PlanSelection />} />
           </Routes>
         </Suspense>
         <Footer />
